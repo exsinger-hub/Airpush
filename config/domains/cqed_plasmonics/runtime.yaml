@@ -1,0 +1,115 @@
+# CQED / Plasmonics 领域运行配置（按 DOMAIN=cqed_plasmonics 自动加载）
+# 若某字段不需要分领域，可保持与主配置一致。
+
+llm:
+  api_key: "EMPTY"
+  base_url: "http://localhost:8000/v1"
+  quick_model: "qwen-32b"
+  deep_model: "qwen-32b"
+  fulltext_model: "qwen-32b"
+  local_model: "qwen2.5:7b"
+  disable_local_quick: true
+  request_timeout_sec: 240
+  max_input_tokens: 32000
+  temperature: 0.3
+  top_p: 0.85
+  presence_penalty: 0.2
+  max_retries: 3
+  circuit_breaker_fails: 4
+  deep_stage_max_seconds: 900
+  fulltext_max_tokens: 12288
+  deep_extract_max_tokens: 12288
+  abstract_translate_max_tokens: 6000
+  figure_hosting_enabled: true
+  figure_selection_use_llm: true
+  figure_selection_timeout_sec: 45
+  figure_selection_total_budget_sec: 90
+  figure_selection_attempts: 3
+  figure_max_images: 3
+  figure_scan_pages: 80
+  figure_candidate_limit: 24
+  figure_llm_candidate_cap: 8
+  github_token: ""
+  github_user: ""
+  github_repo: ""
+  github_branch: "main"
+  github_upload_timeout: 20
+  fulltext_concurrency: 2
+  enable_pdf_routing: true
+  prefer_pdf_fulltext: true
+  pdf_fetch_timeout_sec: 20
+  fulltext_word_min: 300
+  fulltext_word_max: 22000
+
+notion:
+  token: ""
+  database_id: ""
+  page_id: ""
+
+notify:
+  webhook_url: ""
+  alert_url: ""
+
+pubmed:
+  email: ""
+  api_key: ""
+
+elsevier:
+  api_key: ""
+
+openreview:
+  username: ""
+  password: ""
+  access_token: ""
+  use_auth: false
+
+webvpn:
+  enabled: true
+  base_url: ""
+  prefix: ""
+  ticket: ""
+  ticket_cookie_name: ""
+  route: ""
+  extra_cookies: ""
+  cookie_header: ""
+  referer: ""
+  user_agent: ""
+  accept: ""
+  sec_fetch_dest: ""
+  sec_fetch_mode: ""
+  sec_fetch_site: ""
+  use_curl_cffi: true
+  curl_impersonate: ""
+  playwright_fallback: false
+  playwright_headless: true
+  playwright_timeout_ms: 45000
+  ustc_encrypt_host: true
+  ustc_cipher_key: ""
+  probe_url: ""
+  timeout_sec: 25
+
+run:
+  dry_run: false
+  disable_semantic_dedup: false
+  md_only: false
+  reports_dir: "reports/cqed_plasmonics"
+  top_k: 10
+  score_threshold: 20
+  min_selected_papers: 3
+  min_abstract_len: 20
+  fulltext_enabled: true
+  fulltext_top_k: 3
+  fulltext_min_chars: 800
+  fulltext_content_key: "full_text_content"
+  pdf_download_enabled: true
+  pdf_download_top_k: 5
+  pdf_download_dir: "data/pdfs/cqed_plasmonics"
+  pdf_download_timeout: 25
+  sqlite_db_path: "data/papers-cqed_plasmonics.db"
+  md_push_state_file: "data/pushed_ids_cqed_plasmonics.txt"
+  notion_page_replace: false
+  notion_native_blocks: true
+  notion_daily_page: true
+  notion_daily_reuse_existing: true
+  notion_daily_title_prefix: "📰 "
+  notion_daily_title_suffix: " CQED/Plasmonics 每日精选"

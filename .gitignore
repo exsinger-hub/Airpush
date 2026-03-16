@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# 运行时生成的数据（DB、PDF 缓存、日志、临时文件）
+data/
+logs/
+tmp/
+transfer/
+
+# 旧版单文件配置（如有遗留）
+config/runtime.yaml

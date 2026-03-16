@@ -1,0 +1,60 @@
+sources:
+  arxiv:
+    categories: ["quant-ph", "physics.optics", "cond-mat.mes-hall", "cond-mat.mtrl-sci", "eess.SP"]
+    query: "((cavity quantum electrodynamics OR cavity QED OR waveguide QED OR strong coupling OR Purcell) OR (plasmonics OR surface plasmon polariton OR SPP OR nanophotonics OR metasurface)) AND (quantum emitter OR single-photon OR sensing OR nonlinear optics OR inverse design)"
+    max_results: 140
+
+  pubmed:
+    journals:
+      - "Nature Photonics"
+      - "ACS Photonics"
+      - "Optica"
+      - "Light: Science & Applications"
+      - "Physical Review Letters"
+      - "Science"
+      - "Nature"
+      - "Photonics Research"
+      - "IEEE Photonics Technology Letters"
+      - "Nano Letters"
+      - "Advanced Optical Materials"
+      - "Advanced Photonics"
+      - "Nature physics"
+      - "Physical Review X"
+      - "PRX Quantum"
+      - "Quantum Science and Technology"
+    date_range_days: 1
+    max_results: 140
+
+  rss_feeds:
+    - url: "https://www.nature.com/nphoton.rss"
+      name: "Nature Photonics"
+      topic: "plasmonics"
+    - url: "https://feeds.feedburner.com/Optica"
+      name: "Optica"
+      topic: "cqed"
+
+  conference:
+    enabled: true
+    weekly_only: false
+    max_results_per_topic: 40
+    venues: ["CLEO", "OFC", "SPIE Photonics West", "FiO", "QCrypt", "APS March Meeting", "NeurIPS", "ICLR"]
+    topic_queries:
+      cqed: "cavity quantum electrodynamics strong coupling Purcell waveguide QED"
+      plasmonics: "plasmonics surface plasmon polariton nanophotonics metasurface"
+      quantum_photonics: "single-photon quantum emitter photonic crystal nonlinear optics"
+    openreview_api_enabled: false
+    openreview_invitations:
+      cqed:
+        - "ICLR.cc/2025/Conference/-/Submission"
+        - "NeurIPS.cc/2025/Conference/-/Submission"
+      plasmonics:
+        - "ICLR.cc/2025/Conference/-/Submission"
+        - "NeurIPS.cc/2025/Conference/-/Submission"
+      quantum_photonics:
+        - "ICLR.cc/2025/Conference/-/Submission"
+        - "NeurIPS.cc/2025/Conference/-/Submission"
+    fallback_openreview_url: "https://openreview.net/rss"
+    fallback_topic_keywords:
+      cqed: ["cavity qed", "strong coupling", "purcell", "waveguide qed"]
+      plasmonics: ["plasmonics", "surface plasmon", "spp", "nanophotonics", "metasurface"]
+      quantum_photonics: ["single-photon", "quantum emitter", "photonics", "nonlinear optics"]

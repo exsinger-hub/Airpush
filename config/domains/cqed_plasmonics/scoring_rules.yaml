@@ -1,0 +1,74 @@
+top_institutions:
+  - "Caltech"
+  - "MIT"
+  - "Stanford"
+  - "Harvard"
+  - "Yale"               # 超导量子/cQED重镇
+  - "UMD"                # 马里兰/JQI 量子核心
+  - "UChicago"           # 芝加哥大学 (PME)
+  - "ETH Zurich"
+  - "EPFL"
+  - "Max Planck"
+  - "ICFO"               # 光子科学研究所 (必须有)
+  - "NUS"
+  - "Tsinghua"
+  - "Peking University"
+  - "USTC"               # 科大 (量子信息国家实验室)
+  - "Fudan"
+  - "SJTU"
+  - "Google Quantum"
+
+core_rules:
+  # 腔量子电动力学 & 光力学
+  - any: ["cavity quantum electrodynamics", "cavity QED", "waveguide QED", "strong coupling", "optomechanics", "polariton"]
+  # 等离激元 & 超构表面
+  - any: ["plasmonics", "surface plasmon polariton", "SPP", "metasurface", "BIC", "bound states in the continuum"]
+  # 纳米光子学组合条件
+  - all: ["quantum emitter"]
+    any: ["nanocavity", "photonic crystal", "Purcell", "single-photon"]
+  - all: ["metasurface"]
+    any: ["inverse design", "topological", "nonlinear"]
+  # 量子光源
+  - all: ["single-photon"]
+    any: ["source", "detector", "waveguide", "entanglement", "indistinguishability"]
+
+bonus_keywords:
+  # 物理圈绝对的统治地位：顶刊 (分值拉满)
+  - pattern: "(Nature|Science|Nature Photonics|Nature Physics|PRL|Physical Review Letters|Optica|Light: Science & Applications)"
+    score: 40
+    label: "👑 物理顶刊"
+
+  # 高质量光学专刊
+  - pattern: "(Nano Letters|ACS Photonics|Laser & Photonics Reviews|PRX|Physical Review X)"
+    score: 20
+    label: "📄 强子刊/专刊"
+
+  # 实验突破声明 (物理学最看重这个)
+  - pattern: "(first demonstration|experimental realization|observation of|room temperature|on-chip|CMOS compatible)"
+    score: 15
+    label: "🔬 实验突破/落地"
+
+  # 性能宣称 (Q值在光子学里是命根子)
+  - pattern: "(ultra.?high Q|record high|low loss|state.of.the.art|strong coupling regime)"
+    score: 10
+    label: "📈 极限指标"
+
+  # 物理学界的“开源”更倾向于数据共享
+  - pattern: "(data.*available|open.?source|GitHub|code.*available)"
+    score: 8
+    label: "🔓 数据/代码公开"
+
+penalty_keywords:
+  - "review"
+  - "survey"
+  - "tutorial"
+  - "workshop"
+  - "erratum"            # 勘误表，必须屏蔽
+  - "corrigendum"        # 勘误表
+  - "publisher's note"   # 出版社通知
+  - "perspective"        # 观点文章 (非一手工研)
+
+topic_mapping:
+  cqed: ["cavity qed", "strong coupling", "purcell", "optomechanics", "polariton"]
+  nanophotonics: ["plasmonics", "spp", "metasurface", "bic", "topological photonics"]
+  quantum_optics: ["single-photon", "quantum emitter", "entanglement", "indistinguishability"]
