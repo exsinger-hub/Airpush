@@ -196,11 +196,13 @@ llm:
   figure_hosting_enabled: true     # 主开关
   figure_selection_use_llm: true   # 使用 LLM 精选（false = 仅启发式）
   figure_max_images: 3             # 每篇论文最多上传图表数
-  github_token: "ghp_..."          # GitHub PAT（需 repo Contents 写权限）
+  github_token: "${GITHUB_TOKEN}"   # 建议用环境变量注入，避免明文写入仓库
   github_user: "your-username"
   github_repo: "paper-figures"     # 用于托管图片的公开仓库
   github_branch: "main"
 ```
+
+> 🔐 **隐私建议**：不要把真实 `api_key` / `token` / `webhook` 直接写进 `runtime.yaml` 并提交到 Git，优先使用环境变量（如 `GITHUB_TOKEN`、`NOTION_TOKEN`）。
 
 > **为什么用 GitHub + jsDelivr？**
 > jsDelivr 对 GitHub 公开仓库提供免费全球 CDN，图片 URL 稳定可直接嵌入 Notion，无需额外存储服务。
