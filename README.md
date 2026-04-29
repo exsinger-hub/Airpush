@@ -78,6 +78,7 @@ Domain logic is decoupled through YAML. You can add new research directions by e
 ## Quick Install
 
 ```bash
+# Replace with your fork or the actual repository URL
 git clone https://github.com/your-username/medpaper-flow.git
 cd medpaper-flow
 pip install -r requirements.txt
